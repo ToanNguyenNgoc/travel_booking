@@ -31,6 +31,7 @@
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/typeorm": "^9.0.1",
     "mysql2": "^3.1.2",
+    "nestjs-dotenv": "^1.2.1",
     "nodemon": "^2.0.20",
     "pg": "^8.9.0",
     "reflect-metadata": "^0.1.13",

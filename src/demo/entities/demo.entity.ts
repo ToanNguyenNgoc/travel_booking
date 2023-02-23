@@ -5,5 +5,9 @@ export class Demo {
     @PrimaryGeneratedColumn()
     id: number;
     @Column()
-    content: string
+    content: string;
+    @Column()
+    title:string;
+    @Column()
+    image_url:string
 }
