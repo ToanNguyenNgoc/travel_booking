@@ -1,5 +1,5 @@
 import { DataSourceOptions, DataSource } from 'typeorm'
-import { ConfigService } from 'nestjs-dotenv'
+// import { ConfigService } from 'nestjs-dotenv'
 
 // const dotConfig = new ConfigService()
 export const databaseConfig = (configService) => {
