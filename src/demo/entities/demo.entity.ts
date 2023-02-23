@@ -4,10 +4,10 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
 export class Demo {
     @PrimaryGeneratedColumn()
     id: number;
-    @Column()
+    @Column({nullable:true})
     content: string;
-    @Column()
+    @Column({nullable:true})
     title:string;
-    @Column()
+    @Column({nullable:true})
     image_url:string
 }
