@@ -4,12 +4,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { databaseConfig } from './db/data-source';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { DotEnvConfigModule } from './db/dotenv'
 
 @Module({
   imports: [
     DemoModule,
-    DotEnvConfigModule,
     TypeOrmModule.forRoot(databaseConfig)
   ],
   controllers: [AppController],
