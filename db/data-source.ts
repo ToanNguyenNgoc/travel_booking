@@ -1,7 +1,7 @@
 import { DataSourceOptions, DataSource } from 'typeorm'
 import { ConfigService } from 'nestjs-dotenv'
 
-const dotConfig = new ConfigService()
+// const dotConfig = new ConfigService()
 export const databaseConfig = (configService) => {
     return {
         type: configService.get('TYPEORM_TYPE') as any,
@@ -18,5 +18,5 @@ export const databaseConfig = (configService) => {
     }
 }
 
-const dataSource = new DataSource(databaseConfig(dotConfig) as DataSourceOptions)
-export default dataSource
+// const dataSource = new DataSource(databaseConfig(dotConfig) as DataSourceOptions)
+// export default dataSource
