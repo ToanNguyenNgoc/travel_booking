@@ -1,6 +1,6 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm'
 import { DataSourceOptions, DataSource } from 'typeorm'
-import { DotEnvConfigService } from "../configs"
+import { DotEnvConfigService } from "./dotenv"
 
 const dotConfigService = new DotEnvConfigService()
 export const databaseConfig: TypeOrmModuleOptions = {
