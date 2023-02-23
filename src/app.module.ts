@@ -5,10 +5,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { databaseConfig } from '../db/data-source';
+import { UserModule } from './user/user.module';
+import { AbilityModule } from './ability/ability.module';
+import { APP_GUARD } from '@nestjs/core';
+import { AbilitiesGuard } from './ability/abilities.guard';
 
 @Module({
   imports: [
-    DemoModule,
     ConfigModule.forRoot({
       isGlobal: true
     }),
@@ -19,8 +22,17 @@ import { databaseConfig } from '../db/data-source';
         return databaseConfig(configService)
       },
     }),
+    UserModule,
+    DemoModule,
+    AbilityModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_GUARD,
+      useClass: AbilitiesGuard
+    }
+  ],
 })
 export class AppModule { }
